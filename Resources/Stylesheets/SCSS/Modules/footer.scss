@@ -1,0 +1,65 @@
+@import "../base/global";
+
+footer {
+    position: relative;
+    background-color: hsl(221, 78%, 7%);
+    color: hsl(218, 24%, 60%);
+    padding-block-end: 1.6rem;
+    padding-block-start: 4rem;
+
+    .footer-top {
+        position: absolute;
+        top:44px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        @include res-max-mobile-l {
+            top:6px;
+        }
+    }
+
+    .footer-copyright {
+        --justify-content: space-between;
+        --column-gap:#{$gap};
+        @include flex-set(def, row, wrap, var(--column-gap), flex-start, var(--justify-content));
+        width: calc(min(100% - 2rem, 1200px));
+        margin-inline: auto;
+
+        @include res-max-mobile-l {
+            --justify-content: center;
+            --column-gap:1.2rem;
+        }
+
+        small:last-of-type{
+            @include res-max-mobile-l {
+               font-size: 14px;
+            }
+        }
+
+        a {
+            --color-start: hsl(151, 90%, 81%);
+            --color-end: rgb(102, 173, 255);
+            background: -webkit-linear-gradient(-70deg, var(--color-start) 0%, var(--color-end) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            font-weight: 500;
+            -webkit-box-decoration-break: clone;
+            -webkit-text-fill-color: hsla(0, 0%, 0%, 0);
+        }
+    }
+
+    & > svg {
+        position: absolute;
+        transform: scaleY(-1);
+        inset: 0;
+        margin-block-start: -1px;
+    }
+}
+
+@media (hover: hover) {
+    footer a:hover {
+        background: -webkit-linear-gradient(-70deg, hsl(218, 24%, 60%) 0%, hsl(218, 24%, 60%) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+}

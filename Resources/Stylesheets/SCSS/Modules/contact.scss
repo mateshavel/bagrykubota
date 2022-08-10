@@ -1,0 +1,71 @@
+@import "../base/global";
+
+.contact-wrapper {
+    max-width: 620px;
+    margin-inline: auto;
+}
+
+.contact-info {
+    --col-count: 2;
+    @include grid-columns(def, repeat(var(--col-count), minmax($gap-l, 1fr)), var(--gap-xl), stretch, center, stretch);
+
+    @include res-max-mobile-l {
+        --col-count: 1;
+    }
+
+    div:empty{
+        @include res-max-mobile-l {
+            display: none;
+        }
+    }
+
+    > div:last-of-type {
+        @include flex-set(def, row, wrap, $gap-l, flex-start, flex-start, normal);
+    }
+
+    > div {
+        @include flex-set(def, column, wrap, $gap-xs, flex-start, flex-start, normal);
+
+        > div {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+    }
+
+    &__icon {
+        --color-end: hsl(231, 13%, 16%);
+        --color-start: hsl(299, 47%, 49%);
+        background: -webkit-linear-gradient(-70deg, var(--color-start) 20%, var(--color-end) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        font-family: var(--font-text);
+        font-size: 16px;
+        font-weight: 500;
+        -webkit-box-decoration-break: clone;
+        -webkit-text-fill-color: hsla(0, 0%, 0%, 0%);
+
+        &--sec {
+            font-size: 18px;
+        }
+    }
+
+    &__item {
+        font-family: var(--font-text);
+        font-size: 20px;
+        font-weight: 500;
+        color: hsl(230, 16%, 29%);
+        text-decoration: none;
+        margin-inline-start: 2.5rem;
+
+        &--sec {
+            margin-inline-start: 0;
+        }
+    }
+}
+
+@media (hover: hover) {
+    a.contact-info__item:hover {
+        text-decoration: underline;
+    }
+}

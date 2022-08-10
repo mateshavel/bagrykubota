@@ -1,0 +1,48 @@
+@import "../base/global";
+
+.wide-block {
+    position: relative;
+    background-color: hsl(221, 78%, 7%);
+    border-radius: 1rem;
+    color: hsl(0, 0, 100%);
+    overflow: hidden;
+    padding-block-end: 4.5rem;
+    padding-block-start: 4.5rem;
+    padding-inline: 40px; //děleno rozdíl containeru
+
+    h2 {
+        text-align: center;
+        margin-block-end: 2.4rem;
+    }
+
+    &__col {
+        display: grid;
+        gap: 0.8rem;
+        margin-block-start: 3.2rem;
+        margin-inline: auto;
+        max-inline-size: 425px;
+    }
+
+    &__row {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        border-bottom: 1px dashed hsla(0, 0%, 100%, .1);
+    }
+
+    p {
+        font-family: var(--font-text-sec);
+    }
+
+    img {
+        position: absolute;
+        top:50%;
+        width: 50%;
+        margin: 0 -25%;
+        transform: translateY(10%);
+
+        @include res-max-mobile-l {
+            display: none;
+        }
+    }
+}

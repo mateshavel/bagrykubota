@@ -1,0 +1,10 @@
+@import "global";
+
+.container{
+    width: calc(min(100% - 2rem, 1200px));
+    margin-inline: auto;
+
+    &--wide{
+        width: calc(min(100%, 1280px));
+    }
+}

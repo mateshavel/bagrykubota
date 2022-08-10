@@ -1,0 +1,78 @@
+@import "../Base/global";
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+  font-family: var(--font-title);
+}
+
+p,
+span,
+small {
+  font-family: var(--font-text);
+}
+
+p {
+  font-size: 18px;
+}
+
+small {
+  font-size: 16px;
+}
+
+h1 {
+  font-size: clamp(2.5rem, calc(1.929rem + 2.86vw), 4.5rem);
+}
+
+h2,
+h2 {
+  font-size: clamp(2rem, calc(1.429rem + 2.86vw), 3.25rem);
+  font-weight: 800;
+  color: hsl(213, 13%, 16%);
+}
+
+.gradient {
+  // --color-start: hsl(261deg 72% 54%);
+  // --color-end: hsl(359deg 84% 57%);
+  --color-start: hsl(231, 13%, 16%);
+  --color-end: hsl(299, 47%, 49%);
+  background: -webkit-linear-gradient(-70deg, var(--color-start) 60%, var(--color-end) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-size: inherit;
+  -webkit-box-decoration-break: clone;
+  -webkit-text-fill-color: hsla(0, 0%, 0%, 0);
+
+  &--sec {
+    --color-start: hsl(151, 90%, 81%);
+    --color-end: hsl(212, 100%, 70%);
+  }
+}
+
+.desc {
+  font-size: clamp(1.25rem, calc(1.179rem + 0.36vw), 1.5rem);
+  color: hsl(218, 24%, 60%);
+
+  &--sec {
+    color: hsl(0, 0, 100%);
+  }
+
+  &--gray{
+    color: hsl(229, 16%, 29%);
+  }
+}
