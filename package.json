@@ -50,9 +50,9 @@
     "build-dev": "webpack --mode=development",
     "build-prod": "webpack --mode=production",
     "build-watch": "webpack --mode=development --watch",
-    "postcss": "npm run compile:scss && postcss docs/css/style.css --config ./postcss.config.js -o docs/css/style.css",
-    "bundle:css": "npm run stylelint && npm run compile:scss && postcss docs/css/style.css --config ./postcss.config.js | cleancss -o docs/css/style.min.css",
-    "compile:scss": "node-sass --source-map=true Resources/Stylesheets/Scss/style.scss docs/css/style.css",
+    "postcss": "npm run compile:scss && postcss wwwroot/css/style.css --config ./postcss.config.js -o wwwroot/css/style.css",
+    "bundle:css": "npm run stylelint && npm run compile:scss && postcss wwwroot/css/style.css --config ./postcss.config.js | cleancss -o docs/css/style.min.css",
+    "compile:scss": "node-sass --source-map=true Resources/Stylesheets/Scss/style.scss wwwroot/css/style.css",
     "compile:ts": "tsc -p Resources",
     "stylelint": "stylelint --fix Resources/Stylesheets/SCSS/**/*.scss --custom-syntax postcss-scss",
     "watch:scss": "npm run bundle:css & watch \"npm run bundle:css\" Resources/Stylesheets/Scss"
